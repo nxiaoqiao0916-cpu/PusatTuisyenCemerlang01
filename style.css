@@ -54,24 +54,34 @@ body, body.grade-page {
    手机端适配
 ========================== */
 @media (max-width: 480px) {
+
   body, body.grade-page {
-    font-size: 16px;
+    padding-left: 0;      /* ⭐ 必须清掉 */
     padding-top: 80px;
-    padding-left: 20px;
+    font-size: 16px;
+  }
+
+  .site-header {
+    position: fixed;      /* 仍然固定 */
+    top: 0;
+    left: 0;
+    width: 100%;          /* 顶部横条 */
+    height: 70px;
+
+    flex-direction: row;
+    justify-content: flex-start; /* ⭐ logo 在最左 */
+    padding-left: 10px;
   }
 
   .logo {
-    height: 60px;
+    height: 50px;
+    margin: 0;
   }
 
   .question {
-    width: 90%;
+    width: 100%;
+    max-width: 95%;
     padding: 15px;
-  }
-
-  form#parentForm {
-    width: 90%;
-    padding: 20px;
   }
 
   input, select, button {
@@ -79,6 +89,7 @@ body, body.grade-page {
     font-size: 16px;
   }
 }
+
 
 /* ==========================
    月亮 & 星空
@@ -197,3 +208,4 @@ input {
   background-color: #fff8dc;
   cursor: pointer;
 }
+
