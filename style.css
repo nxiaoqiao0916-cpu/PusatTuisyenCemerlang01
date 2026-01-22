@@ -8,23 +8,23 @@ body, body.grade-page {
   margin: 0;
   padding: 0;
   min-height: 100vh;
+
   color: white;
   text-align: center;
-  
+
   /* 内容排版 */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  
+
   /* 背景 */
   background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
   position: relative;
-  
-  /* 初始padding - 只在桌面端需要大的左边距 */
+
+  /* ⭐ 给固定 Logo 让位（非常重要） */
   padding-top: 90px;
-  padding-left: 0; /* 改为0，由内容容器控制间距 */
-  box-sizing: border-box;
+  padding-left: 90px;
 }
 
 /* ==========================
@@ -33,157 +33,42 @@ body, body.grade-page {
 .site-header {
   position: fixed;
   top: 12px;
-  left: 12px; /* 减少左边距 */
+  left: 36px;
   z-index: 9999;
 }
 
 .logo {
   height: 80px;
-  width: auto;
-  max-width: 100%;
+width:auto;
 }
 
 /* ==========================
-   主要内容容器 - 新增
+   手机端适配
 ========================== */
-.main-container {
-  width: 100%;
-  max-width: 1200px;
-  padding: 0 20px;
-  box-sizing: border-box;
-}
-
-/* ==========================
-   题目卡片容器
-========================== */
-.question-container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0 15px;
-  box-sizing: border-box;
-}
-
-/* ==========================
-   题目卡片
-========================== */
-.question {
-  background: rgba(255,255,255,0.2);
-  border-radius: 15px;
-  padding: 15px;
-  margin: 20px 0;
-  width: 100%;
-  min-height: 200px;
-  max-width: 600px;
-  text-align: left;
-  backdrop-filter: blur(5px);
-  border: 1px solid rgba(255,255,255,0.3);
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: transform 0.2s;
-}
-
-.question:hover {
-  transform: scale(1.02);
-}
-
-.question label {
-  display: block;
-  margin: 8px 0;
-  padding-right: 10px;
-}
-
-/* ==========================
-   手机端适配 - 增强
-========================== */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   body, body.grade-page {
     font-size: 16px;
-    padding-top: 70px; /* 减少顶部padding */
-    padding-left: 0;
-    padding-right: 0;
+    padding-top: 80px;
+    padding-left: 20px;
   }
-  
-  .site-header {
-    left: 10px;
-    top: 10px;
-  }
-  
+
   .logo {
     height: 60px;
   }
-  
-  .main-container {
-    padding: 0 15px;
-  }
-  
-  .question {
-    width: 95%;
-    padding: 15px;
-    margin: 15px auto;
-  }
-  
-  .question label {
-    font-size: 16px;
-    line-height: 1.4;
-  }
-  
-  h1 {
-    font-size: 1.5rem;
-    margin: 10px 15px;
-  }
-  
-  h2 {
-    font-size: 1.3rem;
-    margin: 10px 15px;
-  }
-}
 
-/* 小手机特别适配 */
-@media (max-width: 480px) {
-  body, body.grade-page {
-    padding-top: 65px;
-  }
-  
-  .site-header {
-    left: 8px;
-    top: 8px;
-  }
-  
-  .logo {
-    height: 50px;
-  }
-  
   .question {
-    width: 100%;
-    padding: 12px;
-    margin: 12px 0;
-  }
-  
-  .question label {
-    font-size: 15px;
-    margin: 6px 0;
-  }
-  
-  form#parentForm {
-    width: 100%;
+    width: 90%;
     padding: 15px;
   }
-  
-  input, select, button {
-    width: 100% !important;
-    max-width: 100%;
-    font-size: 16px;
-    box-sizing: border-box;
+
+  form#parentForm {
+    width: 90%;
+    padding: 20px;
   }
-  
-  /* 确保表单元素不会超出屏幕 */
-  select, input[type="text"], input[type="number"] {
+
+  input, select, button {
     width: 100%;
-    max-width: 100%;
+    font-size: 16px;
   }
 }
 
@@ -199,15 +84,6 @@ body, body.grade-page {
   top: 40px;
   right: 40px;
   box-shadow: 0 0 30px 10px #fffacd;
-}
-
-@media (max-width: 480px) {
-  .moon {
-    width: 50px;
-    height: 50px;
-    top: 20px;
-    right: 20px;
-  }
 }
 
 .star {
@@ -229,10 +105,40 @@ h1, h2 {
   color: #ffcc66;
   text-shadow: 1px 1px 3px #000;
   margin: 15px 0;
-  padding: 0 15px;
+}
+
+/* ==========================
+   题目卡片
+========================== */
+.question {
+  background: rgba(255,255,255,0.2);
+  border-radius: 15px;
+  padding: 15px;
+  margin: 20px auto;
+
+  width: 600px;
+  min-height: 200px;
+  max-width: 95%;
+
+  text-align: left;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255,255,255,0.3);
   box-sizing: border-box;
-  width: 100%;
-  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  transition: transform 0.2s;
+}
+
+.question:hover {
+  transform: scale(1.05);
+}
+
+.question label {
+  display: block;
+  margin: 4px 0;
 }
 
 /* ==========================
@@ -248,12 +154,10 @@ button {
   background-color: #ffcc66;
   cursor: pointer;
   transition: transform 0.2s, background-color 0.2s;
-  max-width: 300px;
-  width: auto;
 }
 
 button:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
   background-color: #ffd966;
 }
 
@@ -261,14 +165,11 @@ button:hover {
    结果区
 ========================== */
 #result {
-  margin: 30px auto;
+  margin-top: 30px;
   padding: 20px;
   background: rgba(255,255,255,0.3);
   border-radius: 15px;
   color: #fff;
-  width: 95%;
-  max-width: 600px;
-  box-sizing: border-box;
 }
 
 /* ==========================
@@ -278,25 +179,13 @@ form select,
 input {
   position: relative;
   z-index: 10;
+
   appearance: auto;
   padding: 10px;
   border-radius: 10px;
   border: 1px solid #ccc;
-  width: 100%;
-  max-width: 220px;
+  width: 220px;
   font-size: 16px;
   background-color: #fff8dc;
   cursor: pointer;
-  box-sizing: border-box;
-}
-
-/* 桌面端适配 */
-@media (min-width: 769px) {
-  body, body.grade-page {
-    padding-left: 90px;
-  }
-  
-  .site-header {
-    left: 36px;
-  }
 }
