@@ -91,7 +91,22 @@ form.addEventListener('submit', function(e){
 });
 </script>
 <div id="header"></div>
+<script>
+  // 获取整个页面高度
+  const pageHeight = document.body.scrollHeight;
+  const pageWidth = document.body.scrollWidth;
 
+  // 生成 200 个星星
+  for(let i=0; i<200; i++){
+    let star = document.createElement('div');
+    star.className = 'star';
+    // 随机位置，覆盖整个页面
+    star.style.top = Math.random() * pageHeight + 'px';
+    star.style.left = Math.random() * pageWidth + 'px';
+    star.style.width = star.style.height = (Math.random() * 3 + 1) + 'px';
+    document.body.appendChild(star);
+  }
+</script>
 <script>
   fetch("header.html")
     .then(res => res.text())
@@ -99,8 +114,10 @@ form.addEventListener('submit', function(e){
       document.getElementById("header").innerHTML = html;
     });
 </script>
+  
 </body>
 </html>
+
 
 
 
