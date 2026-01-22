@@ -32,24 +32,17 @@ body, body.grade-page {
 ========================== */
 .site-header {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 90px; /* 固定宽度 */
-  height: 100vh; /* 全高 */
-  background: rgba(0, 0, 0, 0.7); /* 添加背景色 */
+  top: 12px;
+  left: 36px;
+   background: rgba(255, 255, 255, 0.5); /* 半透明白色边缘 */
+   border-radius: 10px; /* 圆角让边缘更柔和 */
   z-index: 9999;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 20px;
 }
 
 .logo {
-  height: 60px; 
-  width: auto;
-  margin: 10px;
+  height: 80px;
+width:auto;
 }
-
 /* ==========================
    手机端适配
 ========================== */
@@ -208,4 +201,5 @@ input {
   background-color: #fff8dc;
   cursor: pointer;
 }
+
 
