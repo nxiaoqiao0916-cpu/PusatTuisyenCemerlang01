@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=0.9">
-  <title>家长信息填写</title>
+  <title>信息填写</title>
 <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/nxiaoqiao0916-cpu/ptclogo/59eae99688025a4137edf918b64d9675dccb0ea5/Logo2.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="form-page">
-
+<br><br><br>
 <h1>👋 欢迎来到学习冒险岛</h1>
-<p>请先填写家长信息，然后开始测试</p>
+<p>请先填写信息，然后开始测试</p>
 
 <form id="parentForm">
   <label>
-    家长姓名：
+    姓名：
     <input type="text" id="parentName" required>
   </label><br><br>
 
@@ -73,7 +73,7 @@ form.addEventListener('submit', function(e){
 
   alert("资料已成功保存 🎉");
 
-  // 保存信息到 localStorage，可在首页显示家长名
+  // 保存信息到 localStorage，可在首页显示孩子姓名
   localStorage.setItem('parentName', parentName);
   localStorage.setItem('phoneNumber', phoneNumber);
   localStorage.setItem('childGrade', childGrade);
@@ -101,6 +101,7 @@ form.addEventListener('submit', function(e){
 </script>
 </body>
 </html>
+
 
 
 
