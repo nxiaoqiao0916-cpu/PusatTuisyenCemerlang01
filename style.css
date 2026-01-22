@@ -8,6 +8,7 @@ body, body.grade-page {
   margin: 0;
   padding: 0;
   min-height: 100vh;
+   overflow-x: auto;
 
   color: white;
   text-align: center;
@@ -208,6 +209,7 @@ input {
   background-color: #fff8dc;
   cursor: pointer;
 }
+
 
 
 
