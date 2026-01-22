@@ -34,9 +34,15 @@ body, body.grade-page {
   position: fixed;
   top: 12px;
   left: 36px;
-   background: rgba(255, 255, 255, 0.5); /* 半透明白色边缘 */
-   border-radius: 10px; /* 圆角让边缘更柔和 */
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
   z-index: 9999;
+  width: auto;       /* 自适应logo宽度 */
+  height: auto;      /* 自适应logo高度 */
+  padding: 5px;      /* 白色边缘 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .logo {
@@ -55,11 +61,12 @@ width:auto;
   }
 
   .site-header {
-    position: fixed;      /* 仍然固定 */
-    top: 0;
-    left: 0;
-    width: 100%;          /* 顶部横条 */
-    height: 70px;
+    top: 10px;
+    left: 10px;
+    width: auto;
+    height: auto;
+    padding: 5px;
+  }
 
     flex-direction: row;
     justify-content: flex-start; /* ⭐ logo 在最左 */
@@ -201,5 +208,6 @@ input {
   background-color: #fff8dc;
   cursor: pointer;
 }
+
 
 
