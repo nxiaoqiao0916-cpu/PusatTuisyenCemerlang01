@@ -47,7 +47,7 @@ body, body.grade-page {
 }
 
 .logo {
-  height: 80px;
+  height: 60px;
 width:auto;
 }
 /* ==========================
@@ -209,6 +209,7 @@ input {
   background-color: #fff8dc;
   cursor: pointer;
 }
+
 
 
 
