@@ -20,7 +20,7 @@ body, body.grade-page {
   justify-content: flex-start;
 
   /* 背景 */
-  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+ background: radial-gradient(ellipse at bottom, #4b0082 0%, #1a0033 100%);
   position: relative;
 
   /* ⭐ 给固定 Logo 让位（非常重要） */
@@ -209,6 +209,7 @@ input {
   background-color: #fff8dc;
   cursor: pointer;
 }
+
 
 
 
