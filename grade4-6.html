@@ -1,0 +1,216 @@
+<!DOCTYPE html> 
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=0.8">
+  <title>4–6 年级测试</title>
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/nxiaoqiao0916-cpu/ptclogo/59eae99688025a4137edf918b64d9675dccb0ea5/Logo2.png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { font-family: Arial, sans-serif; text-align:center; background:#0b0b2f; color:white; position: relative; }
+   .question { margin:20px 0; padding:10px; border:1px solid #fff; border-radius:8px; }
+    button { padding:10px 20px; font-size:16px; margin-top:20px; cursor:pointer; }
+    .star { position: absolute; background:white; border-radius:50%; }
+  </style>
+</head>
+<body class="grade-page">
+
+<div class="moon"></div>
+
+<h1>🌟 第一关：4–6 年级测试</h1>
+
+<form id="quizForm">
+
+<!-- 华语题 3题 -->
+<div class="question" data-subject="Chinese" data-score="8">
+  <p>1️⃣ 选择合适的成语填空：他学习非常认真，总是___，所以成绩名列前茅。<br>（skip可跳过）</p>
+  <label><input type="radio" name="q1" value="1"> 锲而不舍</label><br>
+  <label><input type="radio" name="q1" value="0"> 得过且过</label><br>
+  <label><input type="radio" name="q1" value="skip"> 跳过 skip</label>
+</div>
+
+<div class="question" data-subject="Chinese" data-score="8">
+  <p>2️⃣ 选出下列句子语法正确的一项：（skip可跳过）</p>
+  <label><input type="radio" name="q2" value="1"> 虽然天气冷，但他还是坚持晨跑。</label><br>
+  <label><input type="radio" name="q2" value="0"> 天气虽然冷，他还是晨跑坚持。</label><br>
+  <label><input type="radio" name="q2" value="skip"> 跳过 skip</label>
+</div>
+
+<div class="question" data-subject="Chinese" data-score="8">
+  <p>3️⃣ 解释句子意思：“画蛇添足”是什么意思？（skip可跳过）</p>
+  <label><input type="radio" name="q3" value="1"> 做了多余的事，反而坏事</label><br>
+  <label><input type="radio" name="q3" value="0"> 画画技巧很棒</label><br>
+  <label><input type="radio" name="q3" value="skip"> 跳过 skip</label>
+</div>
+
+<!-- 国语题 3题 -->
+<div class="question" data-subject="BM" data-score="8">
+  <p>4️⃣ Pilih perkataan yang betul untuk lengkapkan ayat: Ali suka ___ bola sepak.</p><br>
+  <label><input type="radio" name="q4" value="1"> bermain</label><br>
+  <label><input type="radio" name="q4" value="0"> membaca</label>
+</div>
+
+<div class="question" data-subject="BM" data-score="8">
+  <p>5️⃣ Pilih ayat yang betul:</p>
+  <label><input type="radio" name="q5" value="1"> Dia pergi ke perpustakaan untuk membaca buku.</label><br>
+  <label><input type="radio" name="q5" value="0"> Perpustakaan dia pergi membaca buku.</label>
+</div>
+
+<div class="question" data-subject="BM" data-score="8">
+  <p>6️⃣ Pilih antonim untuk 'cepat':</p>
+  <label><input type="radio" name="q6" value="1"> lambat</label><br>
+  <label><input type="radio" name="q6" value="0"> kuat</label>
+</div>
+
+<!-- 英语题 3题 -->
+<div class="question" data-subject="English" data-score="10">
+  <p>7️⃣ Choose the correct word to complete the sentence: She has ___ interesting book.</p>
+  <label><input type="radio" name="q7" value="1"> an</label><br>
+  <label><input type="radio" name="q7" value="0"> a</label>
+</div>
+
+<div class="question" data-subject="English" data-score="10">
+  <p>8️⃣ Which sentence is grammatically correct?</p>
+  <label><input type="radio" name="q8" value="1"> They have been studying for two hours.</label><br>
+  <label><input type="radio" name="q8" value="0"> They studying have been for two hours.</label>
+</div>
+
+<div class="question" data-subject="English" data-score="10">
+  <p>9️⃣ Choose the word that is opposite in meaning to "difficult".</p>
+  <label><input type="radio" name="q9" value="1"> easy</label><br>
+  <label><input type="radio" name="q9" value="0"> hard</label>
+</div>
+
+<!-- 数学题 3题 (双语) -->
+<div class="question" data-subject="Math" data-score="10">
+  <p>🔟 如果一个矩形的长是8 cm，宽是5 cm，它的面积是多少？ <br>What is the area of a rectangle with length 8 cm and width 5 cm?</p>
+  <label><input type="radio" name="q10" value="1"> 40 cm²</label><br>
+  <label><input type="radio" name="q10" value="0"> 13 cm²</label>
+</div>
+
+<div class="question" data-subject="Math" data-score="10">
+  <p>1️⃣1️⃣ 一个数列：2, 5, 8, 11, … 第 7 个数字是多少？ <bbr></bbr><br>Find the 7th number in the sequence 2, 5, 8, 11, ...<br></p>
+  <label><input type="radio" name="q11" value="1"> 20</label><br>
+  <label><input type="radio" name="q11" value="0"> 19</label>
+</div>
+
+<div class="question" data-subject="Math" data-score="10">
+  <p>1️⃣2️⃣ 12 ÷ 0.5 = ? （12 ÷ 0.5 = ?）</p>
+  <label><input type="radio" name="q12" value="1"> 24</label><br>
+  <label><input type="radio" name="q12" value="0"> 6</label>
+</div>
+
+<!-- 科学题 3题 (双语) -->
+<div class="question" data-subject="Science" data-score="10">
+  <p>1️⃣3️⃣ 太阳是___恒星<br>The Sun is a ___ star. </p>
+  <label><input type="radio" name="q13" value="1"> medium-sized</label><br>
+  <label><input type="radio" name="q13" value="0"> giant</label>
+</div>
+
+<div class="question" data-subject="Science" data-score="10">
+  <p>1️⃣4️⃣ 水在___°C沸腾<br>Water boils at ___ °C. </p>
+  <label><input type="radio" name="q14" value="1"> 100</label><br>
+  <label><input type="radio" name="q14" value="0"> 0</label>
+</div>
+
+<div class="question" data-subject="Science" data-score="10">
+  <p>1️⃣5️⃣  植物利用___和阳光制造食物<br>Plants make their own food using ___ and sunlight.</p>
+  <label><input type="radio" name="q15" value="1"> water and carbon dioxide 水和二氧化碳</label><br>
+  <label><input type="radio" name="q15" value="0"> soil and rocks 土壤和石头</label>
+</div>
+
+</form>
+
+<button onclick="finishGame()">完成关卡</button>
+
+<div id="result"></div>
+<canvas id="fireworks"></canvas>
+
+<script>
+function finishGame() {
+  const questions = document.querySelectorAll('.question');
+  const perQuestionScore = 100 / 15; // 每题分数
+  let totalScore = 0;
+  let subjectScores = {};
+  let subjectTotals = {};
+
+  // 统计每科总分和得分
+  questions.forEach(q => {
+    const subject = q.dataset.subject;
+    const selected = q.querySelector('input[type="radio"]:checked');
+
+    if(!subjectScores[subject]) { subjectScores[subject]=0; subjectTotals[subject]=0; }
+    subjectTotals[subject] += perQuestionScore;
+
+    // skip 或答对都算满分
+    if(selected && (selected.value === "1" || selected.value === "skip")) {
+      subjectScores[subject] += perQuestionScore;
+      totalScore += perQuestionScore;
+    }
+  });
+
+  // 每科百分比
+  let subjectsArray = [];
+  for(let s in subjectScores){
+    let percent = Math.round(subjectScores[s]/subjectTotals[s]*100);
+    subjectsArray.push({subject: s, percent});
+  }
+
+  // 排序找最弱两科
+  subjectsArray.sort((a,b)=>a.percent - b.percent);
+  let weakestTwo = subjectsArray.slice(0,2).map(o=>`<span style="color:red">${o.subject}</span>`).join(" & ");
+
+  // 每科得分百分比显示
+  let scoreDetails = subjectsArray.map(o=>`${o.subject}: ${o.percent}%`).join(" | ");
+
+  // 总分百分比
+  let percentTotal = Math.round(totalScore / 100 * 100); // 总分满分100
+
+  // 星星和鼓励语
+  let stars="⭐";
+  if(percentTotal >= 60) stars="⭐⭐";
+  if(percentTotal >= 80) stars="⭐⭐⭐";
+
+  let msg="💪 没关系，我们一起变强！";
+  if(percentTotal >= 60) msg="😊 做得不错，继续努力！";
+  if(percentTotal >= 80) msg="🎉 太棒了！你是学习小英雄！";
+
+  // 显示结果
+  document.getElementById('result').innerHTML = `
+    <h2>🏁 关卡完成</h2>
+    <p>总分：${Math.round(totalScore)}/100 (${percentTotal}%)</p>
+    <p>星星：${stars}</p>
+    <p>${msg}</p>
+    <p>📌 建议加强：${weakestTwo}</p>
+    <p>📊 各科得分：${scoreDetails}</p>
+  `;
+}
+</script>
+
+<script>
+  // 获取整个页面高度
+  const pageHeight = document.body.scrollHeight;
+  const pageWidth = document.body.scrollWidth;
+
+  // 生成 200 个星星
+  for(let i=0; i<200; i++){
+    let star = document.createElement('div');
+    star.className = 'star';
+    // 随机位置，覆盖整个页面
+    star.style.top = Math.random() * pageHeight + 'px';
+    star.style.left = Math.random() * pageWidth + 'px';
+    star.style.width = star.style.height = (Math.random() * 3 + 1) + 'px';
+    document.body.appendChild(star);
+  }
+</script>
+<div id="header"></div>
+
+<script>
+  fetch("header.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("header").innerHTML = html;
+    });
+</script>
+</body>
+</html>

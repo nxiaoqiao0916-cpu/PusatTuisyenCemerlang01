@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>家长信息填写</title>
+<link rel="icon" type="image/png" href="https://raw.githubusercontent.com/nxiaoqiao0916-cpu/ptclogo/59eae99688025a4137edf918b64d9675dccb0ea5/Logo2.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="form-page">
+
+<h1>👋 欢迎来到学习冒险岛</h1>
+<p>请先填写家长信息，然后开始测试</p>
+
+<form id="parentForm">
+  <label>
+    家长姓名：
+    <input type="text" id="parentName" required>
+  </label><br><br>
+
+  <label>
+    电话号码：
+    <input type="tel" id="phoneNumber" required pattern="[0-9]{10,12}">
+  </label><br><br>
+
+  <label>
+    孩子年级：
+    <select id="childGrade" required>
+      <option value="">请选择年级</option>
+      <option value="1">1年级</option>
+      <option value="2">2年级</option>
+      <option value="3">3年级</option>
+      <option value="4">4年级</option>
+      <option value="5">5年级</option>
+      <option value="6">6年级</option>
+      <option value="j1">初1</option>
+      <option value="j2">初2</option>
+      <option value="j3">初3</option>
+      <option value="j4">初4</option>
+      <option value="j5">初5</option>
+    </select>
+  </label><br><br>
+
+  <button type="submit">开始测试 🎮</button>
+</form>
+
+<script>
+const form = document.getElementById('parentForm');
+
+form.addEventListener('submit', function(e){
+  e.preventDefault();
+
+  const parentName = document.getElementById('parentName').value.trim();
+  const phoneNumber = document.getElementById('phoneNumber').value.trim();
+  const childGrade = document.getElementById('childGrade').value;
+
+  if (!parentName || !phoneNumber || !childGrade) {
+    alert("请填写完整家长信息");
+    return;
+  }
+
+  // 提交到 Google Apps Script
+  fetch("https://script.google.com/macros/s/AKfycbzEHixLPiuexiULrxxhCs8mQFvZx5zuA4361Z35hwH3b2jIiraa99Vv9chTibWUgKJN4A/exec", {
+    method: "POST",
+    mode: "no-cors",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      parentName,
+      phoneNumber,
+      childGrade
+    })
+  });
+
+  alert("资料已成功保存 🎉");
+
+  // 保存信息到 localStorage，可在首页显示家长名
+  localStorage.setItem('parentName', parentName);
+  localStorage.setItem('phoneNumber', phoneNumber);
+  localStorage.setItem('childGrade', childGrade);
+
+  // 根据选择跳转到分组页面
+  if (["1","2","3"].includes(childGrade)) {
+    location.href = "grade1-3.html";
+  } else if (["4","5","6"].includes(childGrade)) {
+    location.href = "grade4-6.html";
+  } else if (["j1","j2","j3"].includes(childGrade)) {
+    location.href = "form1-3.html";
+  } else if (["j4","j5"].includes(childGrade)) {
+    location.href = "form4-5.html";
+  }
+});
+</script>
+<div id="header"></div>
+
+<script>
+  fetch("header.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("header").innerHTML = html;
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html> 
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
+  <title>初一至初三测试</title>
+   <link rel="icon" type="image/png" href="https://drive.google.com/uc?export=view&id=1jsK2nsuoVwD4nU_SwaGwLltLxNrWka3a">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { font-family: Arial, sans-serif; text-align:center; background:#0b0b2f; color:white; }
+    .question { margin:20px 0; padding:10px; border:1px solid #fff; border-radius:8px; }
+    button { padding:10px 20px; font-size:16px; margin-top:20px; cursor:pointer; }
+    .star { position: absolute; background:white; border-radius:50%; }
+  </style>
+</head>
+<body class="grade-page">
+
+<div class="moon"></div>
+<br><br><br>
+<h1>🌟 第三关：初一至初三测试</h1>
+<br><br>
+
+<form id="quizForm">
+
+<!-- 华语题 3题 -->
+<div class="question" data-subject="Chinese" data-score="6">
+ <p>1️⃣ 选出句子中成语使用正确的一项：（skip 可跳过）</p>
+  <label><input type="radio" name="q1" value="1"> 他考试前临时抱佛脚，结果成绩不理想。</label><br>
+  <label><input type="radio" name="q1" value="0"> 他每天认真复习，真是临时抱佛脚。</label><br>
+  <label><input type="radio" name="q1" value="skip"> 跳过 skip</label>
+</div>
+
+<div class="question" data-subject="Chinese" data-score="6">
+  <p>
+  阅读短文：（skip 可跳过）<br><br>
+  小杰每天放学后都会先完成作业，才使用手机。他认为只要懂得自律，
+  娱乐也可以成为放松身心的方式。相反，如果沉迷其中，反而会影响学习和健康。
+  </p>
+  <p>2️⃣ 短文的主要观点是什么？</p>
+  <label><input type="radio" name="q2" value="0"> 手机对学生没有好处</label><br>
+  <label><input type="radio" name="q2" value="1"> 懂得自律才能正确使用娱乐</label><br>
+  <label><input type="radio" name="q2" value="skip"> 跳过 skip</label>
+</div>
+
+<div class="question" data-subject="Chinese" data-score="6">
+  <p>3️⃣ 文中“沉迷其中”最接近的意思是？（skip 可跳过）</p>
+  <label><input type="radio" name="q3" value="1"> 过度投入而无法自控</label><br>
+  <label><input type="radio" name="q3" value="0"> 偶尔使用</label><br>
+  <label><input type="radio" name="q3" value="skip"> 跳过 skip</label>
+</div>
+
+<!-- 国语题 3题 -->
+<div class="question" data-subject="BM" data-score="6">
+  <p>4️⃣ Pilih maksud simpulan bahasa “bagai aur dengan tebing”.</p>
+  <label><input type="radio" name="q4" value="1"> Saling membantu</label><br>
+  <label><input type="radio" name="q4" value="0"> Bermusuhan</label>
+</div>
+
+<div class="question" data-subject="BM" data-score="6">
+  <p>Baca petikan di bawah:<br><br>
+  Amir ialah seorang pelajar yang aktif dalam kegiatan kokurikulum.
+  Walaupun jadualnya padat, dia tetap mengutamakan pelajaran.
+  Amir percaya bahawa pengurusan masa yang baik dapat membantu seseorang
+  mencapai keseimbangan antara akademik dan minat peribadi.
+  </p>
+  <p>5️⃣  Apakah idea utama petikan ini?</p>
+  <label><input type="radio" name="q5" value="1"> Kepentingan pengurusan masa yang baik</label><br>
+  <label><input type="radio" name="q5" value="0"> Kokurikulum lebih penting daripada akademik</label>
+</div>
+
+<div class="question" data-subject="BM" data-score="6">
+  <p>6️⃣ Apakah sikap Amir yang boleh dicontohi?</p>
+  <label><input type="radio" name="q6" value="0"> Mengabaikan minat peribadi</label><br>
+  <label><input type="radio" name="q6" value="1"> Bijak mengimbangi masa antara pelajaran dan aktiviti</label>
+</div>
+
+<!-- 英语题 3题 -->
+<div class="question" data-subject="English" data-score="10">
+  <p>7️⃣ Choose the correct sentence.</p>
+  <label><input type="radio" name="q7" value="1"> She has been studying since morning.</label><br>
+  <label><input type="radio" name="q7" value="0"> She have been study since morning.</label>
+</div>
+
+<div class="question" data-subject="English" data-score="10">
+  <p>
+  Read the passage:<br><br>
+  Many teenagers believe that success depends on talent.
+  However, studies show that effort and consistency play a bigger role.
+  Students who learn from mistakes often perform better in the long run.
+  </p>
+  <p>8️⃣ What is the main idea of the passage?</p>
+  <label><input type="radio" name="q8" value="0"> Talent is more important than effort</label><br>
+  <label><input type="radio" name="q8" value="1"> Effort is crucial for long-term success</label><br>
+</div>
+
+<div class="question" data-subject="English" data-score="10">
+  <p>9️⃣ According to the passage what is the phrase “in the long run” most nearly means:</p>
+  <label><input type="radio" name="q9" value="0"> Immediately</label><br>
+  <label><input type="radio" name="q9" value="1"> Over a long period of time</label><br>
+</div>
+
+<!-- 数学题 3题 (双语) -->
+<div class="question" data-subject="Math" data-score="10">
+  <p>🔟 Solve: 3x + 5 = 20</p>
+  <label><input type="radio" name="q10" value="1"> x = 5</label><br>
+  <label><input type="radio" name="q10" value="0"> x = 15</label>
+</div>
+
+<div class="question" data-subject="Math" data-score="10">
+  <p>1️⃣1️⃣ Find the area of a rectangle with length 8 cm and width 5 cm.<br></p>
+  <label><input type="radio" name="q11" value="1"> 40 cm²</label><br>
+  <label><input type="radio" name="q11" value="0"> 26 cm²</label>
+</div>
+
+<div class="question" data-subject="Math" data-score="10">
+  <p>1️⃣2️⃣ What is the value of 2³ × 2² ?</p>
+  <label><input type="radio" name="q12" value="1"> 32</label><br>
+  <label><input type="radio" name="q12" value="0"> 16</label>
+</div>
+
+<!-- 科学题 3题 (双语) -->
+<div class="question" data-subject="Science" data-score="10">
+  <p>
+  Read the passage:<br><br>
+  Plants respond to light by growing towards it. This response is known as
+  phototropism and helps plants get enough energy for photosynthesis.
+  <br>
+  </p>
+  <p>1️⃣3️⃣ What is the main purpose of phototropism?</p>
+  <label><input type="radio" name="q13" value="0"> To protect plants from insects</label><br>
+  <label><input type="radio" name="q13" value="1"> To obtain sufficient light for photosynthesis</label><br>
+</div>
+
+<div class="question" data-subject="Science" data-score="10">
+  <p>1️⃣4️⃣ Which action would best help reduce flooding?</p>
+  <label><input type="radio" name="q14" value="0"> Building more roads</label><br>
+  <label><input type="radio" name="q14" value="1"> Planting more trees</label><br>
+</div>
+
+<div class="question" data-subject="Science" data-score="10">
+  <p>1️⃣5️⃣ Why does the heart beat faster during exercise?</p>
+  <label><input type="radio" name="q15" value="0"> To reduce body temperature</label><br>
+  <label><input type="radio" name="q15" value="1"> To supply more oxygen to muscles</label><br>
+</div>
+
+</form>
+
+<button onclick="finishGame()">完成关卡</button>
+
+<div id="result"></div>
+<canvas id="fireworks"></canvas>
+
+<script>
+function finishGame() {
+  const questions = document.querySelectorAll('.question');
+  const perQuestionScore = 100 / 15; // 每题分数
+  let totalScore = 0;
+  let subjectScores = {};
+  let subjectTotals = {};
+
+  // 统计每科总分和得分
+  questions.forEach(q => {
+    const subject = q.dataset.subject;
+    const selected = q.querySelector('input[type="radio"]:checked');
+
+    if(!subjectScores[subject]) { subjectScores[subject]=0; subjectTotals[subject]=0; }
+    subjectTotals[subject] += perQuestionScore;
+
+    // skip 或答对都算满分
+    if(selected && (selected.value === "1" || selected.value === "skip")) {
+      subjectScores[subject] += perQuestionScore;
+      totalScore += perQuestionScore;
+    }
+  });
+
+  // 每科百分比
+  let subjectsArray = [];
+  for(let s in subjectScores){
+    let percent = Math.round(subjectScores[s]/subjectTotals[s]*100);
+    subjectsArray.push({subject: s, percent});
+  }
+
+  // 排序找最弱两科
+  subjectsArray.sort((a,b)=>a.percent - b.percent);
+  let weakestTwo = subjectsArray.slice(0,2).map(o=>`<span style="color:red">${o.subject}</span>`).join(" & ");
+
+  // 每科得分百分比显示
+  let scoreDetails = subjectsArray.map(o=>`${o.subject}: ${o.percent}%`).join(" | ");
+
+  // 总分百分比
+  let percentTotal = Math.round(totalScore / 100 * 100); // 总分满分100
+
+  // 星星和鼓励语
+  let stars="⭐";
+  if(percentTotal >= 60) stars="⭐⭐";
+  if(percentTotal >= 80) stars="⭐⭐⭐";
+
+  let msg="💪 没关系，我们一起变强！";
+  if(percentTotal >= 60) msg="😊 做得不错，继续努力！";
+  if(percentTotal >= 80) msg="🎉 太棒了！你是学习小英雄！";
+
+  // 显示结果
+  document.getElementById('result').innerHTML = `
+    <h2>🏁 关卡完成</h2>
+    <p>总分：${Math.round(totalScore)}/100 (${percentTotal}%)</p>
+    <p>星星：${stars}</p>
+    <p>${msg}</p>
+    <p>📌 建议加强：${weakestTwo}</p>
+    <p>📊 各科得分：${scoreDetails}</p>
+  `;
+}
+</script>
+
+
+<script>
+  // 获取整个页面高度
+  const pageHeight = document.body.scrollHeight;
+  const pageWidth = document.body.scrollWidth;
+
+  // 生成 200 个星星
+  for(let i=0; i<200; i++){
+    let star = document.createElement('div');
+    star.className = 'star';
+    // 随机位置，覆盖整个页面
+    star.style.top = Math.random() * pageHeight + 'px';
+    star.style.left = Math.random() * pageWidth + 'px';
+    star.style.width = star.style.height = (Math.random() * 3 + 1) + 'px';
+    document.body.appendChild(star);
+  }
+</script>
+<div id="header"></div>
+
+<script>
+  fetch("header.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("header").innerHTML = html;
+    });
+</script>
+
+
+</body>
+</html>
