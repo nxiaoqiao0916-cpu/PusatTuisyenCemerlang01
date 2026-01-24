@@ -149,17 +149,6 @@ function finishGame() {
     }
   });
 
-   // 每科百分比
-  let subjectsArray = [];
-  for(let s in subjectScores){
-    let percent = Math.round(subjectScores[s]/subjectTotals[s]*100);
-    subjectsArray.push({subject: s, percent});
-  }
-
-    // 排序找最弱两科
-  subjectsArray.sort((a,b)=>a.percent - b.percent);
-  let weakestTwo = subjectsArray.slice(0,2).map(o=>`<span style="color:red">${o.subject}</span>`).join(" & ");
-
   // 每科百分比
   let subjectsArray = [];
   for(let s in subjectScores){
@@ -226,4 +215,5 @@ function finishGame() {
 </body>
 
 </html>
+
 
