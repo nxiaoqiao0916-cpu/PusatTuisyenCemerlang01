@@ -153,8 +153,16 @@ function finishGame() {
   subjectsArray.sort((a,b)=>a.percent - b.percent);
   let weakestTwo = subjectsArray.slice(0,2).map(o=>`<span style="color:red">${o.subject}</span>`).join(" & ");
 
-  // 每科得分百分比显示
-  let scoreDetails = subjectsArray.map(o=>`${o.subject}: ${o.percent}%`).join(" | ");
+  // 每科百分比
+  let subjectsArray = [];
+  for(let s in subjectScores){
+    let percent = Math.round(subjectScores[s]/subjectTotals[s]*100);
+    subjectsArray.push({subject: s, percent});
+  }
+
+  // 排序找最弱两科
+  subjectsArray.sort((a,b)=>a.percent - b.percent);
+  let weakestTwo = subjectsArray.slice(0,2).map(o=>`<span style="color:red">${o.subject}</span>`).join(" & ");
 
   // 每科得分百分比显示
   let scoreDetails = subjectsArray.map(o=>`${o.subject}: ${o.percent}%`).join(" | ");
@@ -172,17 +180,13 @@ function finishGame() {
   if(percentTotal >= 80) msg="🎉 太棒了！你是学习小英雄！";
 
   // 显示结果
-document.getElementById('result').innerHTML = `
-  <h2>🏁 关卡完成</h2>
-  <p>总分：${Math.round(totalScore)}/100 (${percentTotal}%)</p>
-  <p>星星：${stars}</p>
-  <p>${msg}</p>
-  ${
-    percentTotal < 100
-      ? `<p>📌 建议加强：${weakestTwo}</p>`  // 有弱科就显示建议
-      : `<p>🌈 各科表现优秀，继续保持！</p>` // 满分就显示优秀
-  }
-  <p>📊 各科得分：${scoreDetails}</p>
+  document.getElementById('result').innerHTML = `
+    <h2>🏁 关卡完成</h2>
+    <p>总分：${Math.round(totalScore)}/100 (${percentTotal}%)</p>
+    <p>星星：${stars}</p>
+    <p>${msg}</p>
+    <p>📌 建议加强：${weakestTwo}</p>
+    <p>📊 各科得分：${scoreDetails}</p>
   `;
 }
 </script>
@@ -215,8 +219,3 @@ document.getElementById('result').innerHTML = `
 </body>
 
 </html>
-
-
-
-
-
