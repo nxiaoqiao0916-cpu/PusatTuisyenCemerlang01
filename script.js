@@ -10,49 +10,39 @@ function finishGame() {
     const score = parseInt(q.dataset.score);
     const selected = q.querySelector('input[type="radio"]:checked');
 
-    if (!subjectScores[subject]) { 
-      subjectScores[subject] = 0; 
-      subjectTotals[subject] = 0; 
-    }
-
+    if(!subjectScores[subject]) { subjectScores[subject]=0; subjectTotals[subject]=0; }
     subjectTotals[subject] += score;
+    if(selected && selected.value === "1") subjectScores[subject] += score;
 
-    // 只有选对才加分
-    if (selected && selected.value === "1") subjectScores[subject] += score;
-
-    totalScore += selected && selected.value === "1" ? score : 0;
+    totalScore += selected && selected.value==="1" ? score : 0;
   });
 
   // 计算每科百分比
   let subjectsArray = [];
-  for (let s in subjectScores) {
-    let percent = Math.round(subjectScores[s] / subjectTotals[s] * 100);
+  for(let s in subjectScores){
+    let percent = Math.round(subjectScores[s]/subjectTotals[s]*100);
     subjectsArray.push({subject: s, percent});
   }
 
-  // 排序找需要加强的科目（只抓没满分的）
-  subjectsArray.sort((a, b) => a.percent - b.percent);
-  let weakestTwo = subjectsArray
-    .filter(o => o.percent < 100)   // 只留下没满分的科目
-    .slice(0, 2)                    // 最多显示两科
-    .map(o => `<span style="color:red">${o.subject}</span>`)
-    .join(" & ");
+  // 排序找最弱两科
+  subjectsArray.sort((a,b)=>a.percent - b.percent);
+  let weakestTwo = subjectsArray.slice(0,2).map(o=>`<span style="color:red">${o.subject}</span>`).join(" & ");
 
-  // 每科得分百分比显示
-  let scoreDetails = subjectsArray.map(o => `${o.subject}: ${o.percent}%`).join(" | ");
+  // 每科百分比显示
+  let scoreDetails = subjectsArray.map(o=>`${o.subject}: ${o.percent}%`).join(" | ");
 
   // 总分百分比
-  let maxScore = questions.length ? questions.reduce((sum, q) => sum + parseInt(q.dataset.score), 0) : 100;
+  let maxScore = questions.length ? questions.reduce((sum,q)=>sum+parseInt(q.dataset.score),0) : 100;
   let percentTotal = Math.round(totalScore / maxScore * 100);
 
   // 星星和鼓励语
-  let stars = "⭐";
-  if (percentTotal >= 60) stars = "⭐⭐";
-  if (percentTotal >= 80) stars = "⭐⭐⭐";
+  let stars="⭐";
+  if(percentTotal>=60) stars="⭐⭐"; 
+  if(percentTotal>=80) stars="⭐⭐⭐";
 
-  let msg = "💪 没关系，我们一起变强！";
-  if (percentTotal >= 60) msg = "😊 做得不错，继续努力！";
-  if (percentTotal >= 80) msg = "🎉 太棒了！你是学习小英雄！";
+  let msg="💪 没关系，我们一起变强！";
+  if(percentTotal>=60) msg="😊 做得不错，继续努力！";
+  if(percentTotal>=80) msg="🎉 太棒了！你是学习小英雄！";
 
   // 显示结果
   document.getElementById('result').innerHTML = `
@@ -60,14 +50,9 @@ function finishGame() {
     <p>总分：${totalScore}/${maxScore} (${percentTotal}%)</p>
     <p>星星：${stars}</p>
     <p>${msg}</p>
-    ${
-      percentTotal < 100 
-        ? `<p>📌 建议加强：${weakestTwo}</p>` 
-        : `<p>🌈 各科表现优秀，继续保持！</p>`
-    }
+    <p>📌 建议加强：${weakestTwo}</p>
     <p>📊 各科得分：${scoreDetails}</p>
   `;
-}
 
   // 可选：触发烟花
   if(window.canvas && canvas.getContext){
@@ -99,4 +84,3 @@ function finishGame() {
 function goTo(page){
   window.location.href = page;
 }
-
