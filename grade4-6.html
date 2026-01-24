@@ -149,26 +149,12 @@ function finishGame() {
     }
   });
 
-  // 每科百分比
-  let subjectsArray = [];
-  for(let s in subjectScores){
-    let percent = Math.round(subjectScores[s]/subjectTotals[s]*100);
-    subjectsArray.push({subject: s, percent});
-  }
+    // 排序找最弱两科
+  subjectsArray.sort((a,b)=>a.percent - b.percent);
+  let weakestTwo = subjectsArray.slice(0,2).map(o=>`<span style="color:red">${o.subject}</span>`).join(" & ");
 
- // 排序找需要加强的科目（只抓没满分的）
-subjectsArray.sort((a,b)=>a.percent - b.percent);
-
-let weakestTwo = "";
-
-if (percentTotal < 100) {
-  weakestTwo = subjectsArray
-    .filter(o => o.percent < 100)   // ⭐ 关键：只留下没满分的
-    .slice(0, 2)                    // ⭐ 最多显示两科
-    .map(o => `<span style="color:red">${o.subject}</span>`)
-    .join(" & ");
-}
-
+  // 每科得分百分比显示
+  let scoreDetails = subjectsArray.map(o=>`${o.subject}: ${o.percent}%`).join(" | ");
 
   // 每科得分百分比显示
   let scoreDetails = subjectsArray.map(o=>`${o.subject}: ${o.percent}%`).join(" | ");
@@ -229,6 +215,7 @@ document.getElementById('result').innerHTML = `
 </body>
 
 </html>
+
 
 
 
