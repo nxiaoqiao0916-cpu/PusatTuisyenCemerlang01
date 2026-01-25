@@ -155,14 +155,14 @@ h1, h2 {
 }
 
 .question p {
-  font-size: 20px; 
+  font-size: 28px; 
   line-height: 1.5;
 }
 
 .question label {
   display: block;
   margin: 4px 0;
-  font-size: 18px; /* 可以同时调整选项大小 */
+  font-size: 28px; /* 可以同时调整选项大小 */
 }
 
 .question:hover {
@@ -222,6 +222,7 @@ input {
   background-color: #fff8dc;
   cursor: pointer;
 }
+
 
 
 
