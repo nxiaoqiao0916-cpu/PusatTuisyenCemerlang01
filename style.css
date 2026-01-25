@@ -61,19 +61,19 @@ width:auto;
     font-size: 16px;
   }
 
-  .site-header {
-     position:fixed
-    top: 10px;
-    left: 10px;
-    width: auto;
-    height: auto;
-    padding: 5px;
-  }
+ .site-header {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  width: auto;
+  height: auto;
+  padding: 5px;
 
-    flex-direction: row;
-    justify-content: flex-start; /* ⭐ logo 在最左 */
-    padding-left: 10px;
-  }
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
 
   .logo {
     height: 40px;
@@ -210,7 +210,6 @@ input {
   background-color: #fff8dc;
   cursor: pointer;
 }
-
 
 
 
