@@ -154,17 +154,6 @@ h1, h2 {
   transition: transform 0.2s;
 }
 
-.question p {
-  font-size: 20px; 
-  line-height: 1.5;
-}
-
-.question label {
-  display: block;
-  margin: 4px 0;
-  font-size: 18px; /* 可以同时调整选项大小 */
-}
-
 
 .question:hover {
   transform: scale(1.05);
@@ -223,4 +212,5 @@ input {
   background-color: #fff8dc;
   cursor: pointer;
 }
+
 
