@@ -12,6 +12,7 @@ body, body.grade-page {
 
   color: white;
   text-align: center;
+    font-size: 18px;
 
   /* 内容排版 */
   display: flex;
@@ -58,7 +59,7 @@ width:auto;
   body, body.grade-page {
     padding-left: 0;      /* ⭐ 必须清掉 */
     padding-top: 80px;
-    font-size: 16px;
+    font-size: 25px;
   }
 
  .site-header {
@@ -210,10 +211,3 @@ input {
   background-color: #fff8dc;
   cursor: pointer;
 }
-
-
-
-
-
-
-
