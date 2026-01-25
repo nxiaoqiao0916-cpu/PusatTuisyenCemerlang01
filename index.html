@@ -14,17 +14,19 @@
 
 <form id="parentForm">
   <label>
-    玩家姓名：
+    Player Name玩家姓名：
     <input type="text" id="parentName" required>
   </label><br><br>
 
   <label>
     电话号码：
+    Phone No:
     <input type="tel" id="phoneNumber" required pattern="[0-9]{10,12}">
   </label><br><br>
 
   <label>
     孩子年级：
+    ChidlGrade:
     <select id="childGrade" required>
       <option value="">请选择年级</option>
       <option value="P1">1年级 Year 1</option>
@@ -41,7 +43,8 @@
     </select>
   </label><br><br>
 
-  <button type="submit">开始测试 🎮</button>
+  <button type="submit">开始测试
+    Start 🎮</button>
 </form>
 
 <script>
@@ -117,7 +120,6 @@ form.addEventListener('submit', function(e){
   
 </body>
 </html>
-
 
 
 
