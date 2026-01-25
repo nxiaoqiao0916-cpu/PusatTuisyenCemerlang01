@@ -175,10 +175,18 @@ function finishGame() {
     subjectsArray.push({subject: s, percent});
   }
 
-  // 排序找最弱两科
-  subjectsArray.sort((a,b)=>a.percent - b.percent);
-  let weakestTwo = subjectsArray.slice(0,2).map(o=>`<span style="color:red">${o.subject}</span>`).join(" & ");
-
+ // 找出没满分的科目
+let notFull = subjectsArray.filter(o => o.percent < 100);
+let advice = "";
+if(notFull.length === 0){
+    advice = "📌 各科表现优异，继续保持！";
+} else if(notFull.length === 1){
+    advice = `📌 建议加强：<span style="color:red">${notFull[0].subject}</span>`;
+} else {
+    // 排序找最弱两科
+    notFull.sort((a,b)=>a.percent - b.percent);
+    advice = `📌 建议加强：<span style="color:red">${notFull[0].subject}</span> & <span style="color:red">${notFull[1].subject}</span>`;
+}
   // 每科得分百分比显示
   let scoreDetails = subjectsArray.map(o=>`${o.subject}: ${o.percent}%`).join(" | ");
 
@@ -200,7 +208,7 @@ function finishGame() {
     <p>总分：${Math.round(totalScore)}/100 (${percentTotal}%)</p>
     <p>星星：${stars}</p>
     <p>${msg}</p>
-    <p>📌 建议加强：${weakestTwo}</p>
+    <p>📌 建议加强：${advice}</p>
     <p>📊 各科得分：${scoreDetails}</p>
   `;
 }
@@ -234,6 +242,7 @@ function finishGame() {
 </body>
 
 </html>
+
 
 
 
