@@ -12,6 +12,7 @@ body, body.grade-page {
 
   color: white;
   text-align: center;
+    font-size: 18px;
 
   /* 内容排版 */
   display: flex;
@@ -210,6 +211,7 @@ input {
   background-color: #fff8dc;
   cursor: pointer;
 }
+
 
 
 
