@@ -55,7 +55,7 @@ function finishGame() {
     <p>总分：${totalScore}/${maxScore} (${percentTotal}%)</p>
     <p>星星：${stars}</p>
     <p>${msg}</p>
-    <p>📌 建议加强：${weakestTwo}</p>
+    <p>📌 建议加强：${advice}</p>
     <p>📊 各科得分：${scoreDetails}</p>
   `;
 
@@ -89,4 +89,5 @@ function finishGame() {
 function goTo(page){
   window.location.href = page;
 }
+
 
