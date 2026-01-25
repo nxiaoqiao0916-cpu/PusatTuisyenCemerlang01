@@ -44,6 +44,11 @@ function finishGame() {
   if(percentTotal>=60) msg="😊 做得不错，继续努力！";
   if(percentTotal>=80) msg="🎉 太棒了！你是学习小英雄！";
 
+   // 判断是否全部满分
+  let allFull = subjectsArray.every(o => o.percent === 100);
+  let advice = allFull ? "📌 各科表现优异，继续保持！" : `📌 建议加强：${weakestTwo}`;
+
+
   // 显示结果
   document.getElementById('result').innerHTML = `
     <h2>🏁 关卡完成</h2>
@@ -84,3 +89,4 @@ function finishGame() {
 function goTo(page){
   window.location.href = page;
 }
+
