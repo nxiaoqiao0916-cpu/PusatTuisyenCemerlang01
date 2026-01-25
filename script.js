@@ -24,9 +24,18 @@ function finishGame() {
     subjectsArray.push({subject: s, percent});
   }
 
-  // 排序找最弱两科
-  subjectsArray.sort((a,b)=>a.percent - b.percent);
-  let weakestTwo = subjectsArray.slice(0,2).map(o=>`<span style="color:red">${o.subject}</span>`).join(" & ");
+   // 找出没满分的科目
+  let notFull = subjectsArray.filter(o => o.percent < 100);
+  let advice = "";
+  if(notFull.length === 0){
+    advice = "📌 各科表现优异，继续保持！";
+  } else if(notFull.length === 1){
+    advice = `📌 建议加强：<span style="color:red">${notFull[0].subject}</span>`;
+  } else {
+    // 排序找最弱两科
+    notFull.sort((a,b)=>a.percent - b.percent);
+    advice = `📌 建议加强：<span style="color:red">${notFull[0].subject}</span> & <span style="color:red">${notFull[1].subject}</span>`;
+  }
 
   // 每科百分比显示
   let scoreDetails = subjectsArray.map(o=>`${o.subject}: ${o.percent}%`).join(" | ");
@@ -43,10 +52,6 @@ function finishGame() {
   let msg="💪 没关系，我们一起变强！";
   if(percentTotal>=60) msg="😊 做得不错，继续努力！";
   if(percentTotal>=80) msg="🎉 太棒了！你是学习小英雄！";
-
-   // 判断是否全部满分
-  let allFull = subjectsArray.every(o => o.percent === 100);
-  let advice = allFull ? "📌 各科表现优异，继续保持！" : `📌 建议加强：${weakestTwo}`;
 
 
   // 显示结果
@@ -89,5 +94,6 @@ function finishGame() {
 function goTo(page){
   window.location.href = page;
 }
+
 
 
